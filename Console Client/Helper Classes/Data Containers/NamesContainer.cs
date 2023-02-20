@@ -2,22 +2,22 @@ namespace ConsoleClient.Helpers.DataContainers;
 
 public struct NamesContainer
 {
-    public string firstName { get; private set; }
+    public string FirstName { get; private set; }
 
-    public string middleName { get; private set; }
+    public string MiddleName { get; private set; }
 
-    public string lastName { get; private set; }
+    public string LastName { get; private set; }
 
-    public string fullName { get; private set; }
+    public string FullName { get; private set; }
 
     public NamesContainer(string FirstName, string MiddleName, string LastName)
     {
-        firstName = FirstName;
-        middleName = MiddleName;
-        lastName = LastName;
-        fullName =
-            middleName != string.Empty
-                ? $"{firstName} {middleName} {lastName}"
-                : $"{firstName} {lastName}";
+        this.FirstName = FirstName;
+        this.MiddleName = MiddleName;
+        this.LastName = LastName;
+        FullName =
+            MiddleName != string.Empty
+                ? $"{FirstName} {MiddleName} {LastName}"
+                : $"{FirstName} {LastName}";
     }
 }

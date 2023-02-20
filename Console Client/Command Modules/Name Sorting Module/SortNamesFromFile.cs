@@ -51,7 +51,8 @@ sealed class SortNamesFromFile : CommandModule
             fullNamesList.AppendLine(fullName);
             client.SendMessage(fullName);
         }
-        string trimmedPath = path.Substring(0, path.LastIndexOf('/') + 1);
+        int indexFromLastTrailingSlash = path.LastIndexOf('/') + 1;
+        string trimmedPath = path.Substring(0, indexFromLastTrailingSlash);
         string finalPath = $"{trimmedPath}{sortedFileName}";
         client.SendMessage($"\nSorting Completed");
         fileWriter.WriteToFile(finalPath, fullNamesList.ToString().TrimEnd(), FileMode.Create);

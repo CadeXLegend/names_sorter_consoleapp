@@ -15,6 +15,7 @@ public class Client : IClient
     private readonly List<ICommandModule> modules = new();
     public List<ICommandModule> Modules { get => modules; }
     private string? consoleInput = null;
+    public string? ConsoleInput { get => consoleInput; }
 
     //I've chosen this event-driven loop because I prefer the flexibility and control it gives
     public void InitializeCoreServices()
