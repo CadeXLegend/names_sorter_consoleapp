@@ -221,7 +221,7 @@ var assemblies = [
   {
     "name": "Names_Sorter_ConsoleApp",
     "classes": [
-      { "name": "ConsoleClient.Client", "rp": "Names_Sorter_ConsoleApp_Client.html", "cl": 55, "ucl": 2, "cal": 57, "tl": 104, "cb": 18, "tb": 22, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "ConsoleClient.Client", "rp": "Names_Sorter_ConsoleApp_Client.html", "cl": 57, "ucl": 0, "cal": 57, "tl": 104, "cb": 19, "tb": 22, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "ConsoleClient.Helpers.DataContainers.NamesContainer", "rp": "Names_Sorter_ConsoleApp_NamesContainer.html", "cl": 13, "ucl": 0, "cal": 13, "tl": 23, "cb": 2, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "ConsoleClient.Helpers.NamesSorter", "rp": "Names_Sorter_ConsoleApp_NamesSorter.html", "cl": 30, "ucl": 0, "cal": 30, "tl": 46, "cb": 10, "tb": 10, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "ConsoleClient.Helpers.ProjectDirectoryHelper", "rp": "Names_Sorter_ConsoleApp_ProjectDirectoryHelper.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 9, "cb": 1, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
@@ -230,8 +230,7 @@ var assemblies = [
       { "name": "ConsoleClient.Modules.CommandHelp", "rp": "Names_Sorter_ConsoleApp_CommandHelp.html", "cl": 21, "ucl": 0, "cal": 21, "tl": 30, "cb": 2, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "ConsoleClient.Modules.CommandModule", "rp": "Names_Sorter_ConsoleApp_CommandModule.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 22, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "ConsoleClient.Modules.DataContainers.CommandModuleParameters", "rp": "Names_Sorter_ConsoleApp_CommandModuleParameters.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "ConsoleClient.Modules.SortNamesFromFile", "rp": "Names_Sorter_ConsoleApp_SortNamesFromFile.html", "cl": 41, "ucl": 3, "cal": 44, "tl": 64, "cb": 5, "tb": 6, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "Program", "rp": "Names_Sorter_ConsoleApp_Program.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 21, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "ConsoleClient.Modules.SortNamesFromFile", "rp": "Names_Sorter_ConsoleApp_SortNamesFromFile.html", "cl": 44, "ucl": 0, "cal": 44, "tl": 64, "cb": 6, "tb": 6, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
     ]},
 ];
 

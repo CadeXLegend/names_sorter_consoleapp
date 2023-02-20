@@ -12,7 +12,7 @@ public class CommandHelpTest
     public CommandHelpTest() => client = new();
 
     [Fact]
-    public void CommandHelp_RunsSuccessfully()
+    public void CommandHelp_RunsSuccessfullyWithClient()
     {
         string userInput = "--h";
         string expectedOutput =
@@ -37,5 +37,28 @@ public class CommandHelpTest
         StringReader input = new(userInput);
         Console.SetIn(input);
         client.ListenForInput();
+    }
+    [Fact]
+    public void CommandHelp_RunsSuccessfullyExecuteDirectly()
+    {
+        string userInput = "--h";
+        string expectedOutput =
+        "You can type the \"--help\" command at any time to view these commands."
+        + "\nAvailable Commands: "
+        + "\n- --help (--h)"
+        + "\n     - Description: Shows a list of all available commands with their descriptions and usage examples."
+        + "\n     - Parameters: None."
+        + "\nUsage Example: --help\n";
+        Client client = new();
+        CommandHelp module = new(client);
+        client.AddModule(module);
+        module.Execute(userInput);
+        StringReader input = new(userInput);
+        Console.SetIn(input);
+        client.ListenForInput();
+        string? inputNotNull = client.ConsoleInput;
+        Assert.True(inputNotNull != null);
+        bool isSame = expectedOutput.Contains(inputNotNull);
+        Assert.True(isSame);
     }
 }

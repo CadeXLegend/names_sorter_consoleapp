@@ -4,18 +4,19 @@ using ConsoleClient.Helpers;
 
 Console.CursorVisible = true;
 
-Client outputSender = new();
-outputSender.InitializeCoreServices();
+Client client = new();
+client.InitializeCoreServices();
 
-CommandHelp helpCommand = new(outputSender);
-SortNamesFromFile sortNamesFromFile = new(outputSender);
+CommandHelp helpCommand = new(client);
+NamesSorter namesSorter = new(client);
+SortNamesFromFile sortNamesFromFile = new(client, namesSorter);
 
-outputSender.AddModules(helpCommand, sortNamesFromFile);
+client.AddModules(helpCommand, sortNamesFromFile);
 
 TextFileReader textFileReader = new();
 string consoleLogoPath = ProjectDirectoryHelper.GetLocalPathTo(@"Logo");
 string logo = textFileReader.ReadFromFile(consoleLogoPath);
-outputSender.SendMessage(message: logo);
-outputSender.SendMessage("You can type --h at any time to see a list of the available commands.\n");
+client.SendMessage(message: logo);
+client.SendMessage("You can type --h at any time to see a list of the available commands.\n");
 
-outputSender.ListenForInput();
+client.ListenForInput();

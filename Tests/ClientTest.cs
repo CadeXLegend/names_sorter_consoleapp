@@ -50,11 +50,23 @@ public class ClientTest
     public ClientTest() => client = new Client();
 
     [Fact]
-    public void ListenForInput_MessageSends()
+    public void ListenForInput_MessageSendsWithNewLine()
     {
         client.TerminateCoreServices();
         string testMessage = "hello this is a message";
         client.SendMessage(testMessage);
+        StringWriter output = new();
+        Console.SetOut(output);
+        bool isSame = testMessage.Contains(output.ToString());
+        Assert.True(isSame);
+    }
+
+    [Fact]
+    public void ListenForInput_MessageSendsWithoutNewLine()
+    {
+        client.TerminateCoreServices();
+        string testMessage = "hello this is a message";
+        client.SendMessage(testMessage, true);
         StringWriter output = new();
         Console.SetOut(output);
         bool isSame = testMessage.Contains(output.ToString());

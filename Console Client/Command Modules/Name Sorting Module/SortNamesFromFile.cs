@@ -12,7 +12,7 @@ public sealed class SortNamesFromFile : CommandModule
     private readonly ITextFileWriter fileWriter;
     private readonly INamesSorter namesSorter;
 
-    public SortNamesFromFile(ICommandLineOutputSender outputSender) : base(outputSender)
+    public SortNamesFromFile(ICommandLineOutputSender outputSender, INamesSorter namesSorter) : base(outputSender)
     {
         commandParameters = new CommandModuleParameters
         (
@@ -27,7 +27,7 @@ public sealed class SortNamesFromFile : CommandModule
         fileWriter = new TextFileWriter();
         //here we don't parse in the entire client class,
         //we only inject the outputsender interface from the client
-        namesSorter = new NamesSorter(outputSender);
+        this.namesSorter = namesSorter;
     }
 
     public override void Execute(string taskParameters)
