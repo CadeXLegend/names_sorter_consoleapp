@@ -24,13 +24,17 @@ public class Client : IClient
         OnModuleRan += ListenForInput;
     }
 
+    //this gives us some extra control over
+    //when we want the feedback loop to run
+    public void TerminateCoreServices()
+    {
+        OnInputReceived -= RunModule;
+        OnModuleRan -= ListenForInput;
+    }
+
     public void ListenForInput()
     {
         string? input = Console.ReadLine();
-        if (input == null || string.IsNullOrWhiteSpace(input))
-        {
-            ListenForInput();
-        }
         consoleInput = input;
         OnInputReceived?.Invoke();
     }
