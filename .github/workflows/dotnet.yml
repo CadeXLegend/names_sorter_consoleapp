@@ -23,11 +23,12 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.100
-    - name: Navigate to inner project files
-      run: cd "Console Client"
     - name: Restore dependencies
+      working-directory: "./Console Client"
       run: dotnet restore
     - name: Build
+      working-directory: "./Console Client"
       run: dotnet build --no-restore
     - name: Test
+      working-directory: "./Console Client"
       run: dotnet test --no-build --verbosity normal
