@@ -1,0 +1,15 @@
+/home/cade/Names_Sorter_ConsoleApp/Console Client/bin/Debug/net7.0/Names_Sorter_ConsoleApp
+/home/cade/Names_Sorter_ConsoleApp/Console Client/bin/Debug/net7.0/Names_Sorter_ConsoleApp.deps.json
+/home/cade/Names_Sorter_ConsoleApp/Console Client/bin/Debug/net7.0/Names_Sorter_ConsoleApp.runtimeconfig.json
+/home/cade/Names_Sorter_ConsoleApp/Console Client/bin/Debug/net7.0/Names_Sorter_ConsoleApp.dll
+/home/cade/Names_Sorter_ConsoleApp/Console Client/bin/Debug/net7.0/Names_Sorter_ConsoleApp.pdb
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/Names_Sorter_ConsoleApp.csproj.AssemblyReference.cache
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/Names_Sorter_ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/Names_Sorter_ConsoleApp.AssemblyInfoInputs.cache
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/Names_Sorter_ConsoleApp.AssemblyInfo.cs
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/Names_Sorter_ConsoleApp.csproj.CoreCompileInputs.cache
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/Names_Sorter_ConsoleApp.dll
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/refint/Names_Sorter_ConsoleApp.dll
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/Names_Sorter_ConsoleApp.pdb
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/Names_Sorter_ConsoleApp.genruntimeconfig.cache
+/home/cade/Names_Sorter_ConsoleApp/Console Client/obj/Debug/net7.0/ref/Names_Sorter_ConsoleApp.dll

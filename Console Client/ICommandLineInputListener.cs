@@ -2,8 +2,8 @@ namespace ConsoleClient.Core;
 
 public interface ICommandLineInputListener
 {
-    delegate void InputReceivedEvent(object sender);
+    delegate void InputReceivedEvent();
     event InputReceivedEvent OnInputReceived;
 
-    public void ListenForInput(object sender);
+    public void ListenForInput();
 }

@@ -4,7 +4,7 @@ using ConsoleClient.Modules.DataContainers;
 
 namespace ConsoleClient.Modules;
 
-sealed class SortNamesFromFile : CommandModule
+public sealed class SortNamesFromFile : CommandModule
 {
     private readonly string sortedFileName = "sorted-names-list.txt";
     private readonly ITextFileReader fileReader;

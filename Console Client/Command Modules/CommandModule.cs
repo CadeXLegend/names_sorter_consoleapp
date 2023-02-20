@@ -5,7 +5,7 @@ namespace ConsoleClient.Modules;
 /// <summary>
 /// This is the CommandModule template class.
 /// </summary>
-abstract class CommandModule : ICommandModule
+public abstract class CommandModule : ICommandModule
 {
     protected ICommandModuleParamaters commandParameters;
     public ICommandModuleParamaters CommandParameters { get => commandParameters; }

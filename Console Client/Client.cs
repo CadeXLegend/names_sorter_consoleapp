@@ -24,17 +24,23 @@ public class Client : IClient
         OnModuleRan += ListenForInput;
     }
 
-    public void ListenForInput(object sender)
+    public void ListenForInput()
     {
         string? input = Console.ReadLine();
-        if (input == null || string.IsNullOrWhiteSpace(input)) ListenForInput(sender: sender);
+        if (input == null || string.IsNullOrWhiteSpace(input))
+        {
+            ListenForInput();
+        }
         consoleInput = input;
-        OnInputReceived?.Invoke(sender: sender);
+        OnInputReceived?.Invoke();
     }
 
-    public void SendMessage(string message)
+    public void SendMessage(string message, bool noNewLine = false)
     {
-        Console.WriteLine(message);
+        if (noNewLine)
+            Console.Write(message);
+        else
+            Console.WriteLine(message);
     }
 
     public void SendErrorMessage(object caller, string errorMessage)
@@ -49,7 +55,7 @@ public class Client : IClient
 
     public void AddModules(params ICommandModule[] modules)
     {
-        foreach(ICommandModule module in modules)
+        foreach (ICommandModule module in modules)
             this.modules.Add(module);
     }
 
@@ -58,12 +64,12 @@ public class Client : IClient
     //whether the module completes or not
     //I could add OnModuleRanSuccessfully and Unsuccessfully but no need
     //for the scope of this project
-    private void RunModule(object sender)
+    private void RunModule()
     {
         if (consoleInput == null)
         {
             SendMessage("Warning: A module was just called to run while the input is empty.\n");
-            OnModuleRan?.Invoke(sender: sender);
+            OnModuleRan?.Invoke();
             return;
         }
 
@@ -84,11 +90,11 @@ public class Client : IClient
         if (module == null)
         {
             SendMessage($"Module of given name [{moduleName}] has not been added to this client.\n");
-            OnModuleRan?.Invoke(sender: sender);
+            OnModuleRan?.Invoke();
             return;
         }
 
         module.Execute(taskParameters);
-        OnModuleRan?.Invoke(sender: sender);
+        OnModuleRan?.Invoke();
     }
 }

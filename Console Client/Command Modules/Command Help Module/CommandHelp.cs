@@ -2,7 +2,7 @@ using ConsoleClient.Modules.DataContainers;
 
 namespace ConsoleClient.Modules;
 
-sealed class CommandHelp : CommandModule
+public sealed class CommandHelp : CommandModule
 {
     public CommandHelp(IClient client) : base(client)
     {
