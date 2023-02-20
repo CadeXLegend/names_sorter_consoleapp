@@ -1,20 +1,21 @@
+using ConsoleClient.Core;
 using ConsoleClient.Helpers.DataContainers;
 
 namespace ConsoleClient.Helpers;
 
 public class NamesSorter : INamesSorter
 {
-    public NamesSorter(IClient client) => this.client = client;
+    public NamesSorter(ICommandLineOutputSender outputSender) => this.outputSender = outputSender;
     //ensuring that the client is never modified
     //after it is injected
-    private readonly IClient client;
+    private readonly ICommandLineOutputSender outputSender;
     public string[]? SortAlphabetically(string[] listOfNames)
     {
         string className = GetType().Name;
         if (listOfNames.Length <= 0)
         {
-            client.SendErrorMessage(this, "Please provide a valid list of names.");
-            client.SendErrorMessage(this, "This list of names is empty.");
+            outputSender.SendErrorMessage(this, "Please provide a valid list of names.");
+            outputSender.SendErrorMessage(this, "This list of names is empty.");
             return null;
         }
         int namesLength = listOfNames.Length;
@@ -24,8 +25,8 @@ public class NamesSorter : INamesSorter
         {
             if (listOfNames[i] == string.Empty)
             {
-                client.SendErrorMessage(this, "The element at {i} in the list of names provided is empty.");
-                client.SendErrorMessage(this, "Please ensure that there are no empty lines in the array provided.");
+                outputSender.SendErrorMessage(this, "The element at {i} in the list of names provided is empty.");
+                outputSender.SendErrorMessage(this, "Please ensure that there are no empty lines in the array provided.");
                 return null;
             }
             individualNames = listOfNames[i].Split(' ');

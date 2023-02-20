@@ -1,5 +1,4 @@
 using System.Text;
-using System.Text.Json;
 using ConsoleClient.Helpers;
 using ConsoleClient.Modules.DataContainers;
 
@@ -25,6 +24,8 @@ sealed class SortNamesFromFile : CommandModule
         );
         fileReader = new TextFileReader();
         fileWriter = new TextFileWriter();
+        //here we don't parse in the entire client class,
+        //we only inject the outputsender interface from the client
         namesSorter = new NamesSorter(client);
     }
 
