@@ -32,3 +32,5 @@ jobs:
     - name: Test
       working-directory: "./Console Client"
       run: dotnet test --no-build --verbosity normal
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2.4.1
