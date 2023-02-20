@@ -23,6 +23,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.100
+    - name: Navigate to inner project files
+      run: cd "Console Client"
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
