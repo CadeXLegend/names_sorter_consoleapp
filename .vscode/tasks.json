@@ -36,6 +36,13 @@
                 "${workspaceFolder}/Console Client/Names_Sorter_ConsoleApp.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test",
+            "command": "cd \"Tests\"; dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura",
+            "type": "shell",
+            "problemMatcher": "$msCompile",
+            "detail": "performs the tests and collects test coverage which outputs to a cobertura report",
         }
     ]
 }

@@ -1,3 +1,4 @@
+using ConsoleClient.Core;
 using ConsoleClient.Modules.DataContainers;
 
 namespace ConsoleClient.Modules;
@@ -9,12 +10,12 @@ public abstract class CommandModule : ICommandModule
 {
     protected ICommandModuleParamaters commandParameters;
     public ICommandModuleParamaters CommandParameters { get => commandParameters; }
-    protected IClient client;
+    protected ICommandLineOutputSender outputSender;
 
-    public CommandModule(IClient client)
+    public CommandModule(ICommandLineOutputSender outputSender)
     {
         commandParameters = new CommandModuleParameters();
-        this.client = client;
+        this.outputSender = outputSender;
     }
 
     public abstract void Execute(string taskParameters);

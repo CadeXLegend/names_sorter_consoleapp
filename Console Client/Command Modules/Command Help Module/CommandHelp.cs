@@ -4,7 +4,7 @@ namespace ConsoleClient.Modules;
 
 public sealed class CommandHelp : CommandModule
 {
-    public CommandHelp(IClient client) : base(client)
+    public CommandHelp(IClient outputSender) : base(outputSender)
     {
         commandParameters = new CommandModuleParameters
         (
@@ -17,14 +17,14 @@ public sealed class CommandHelp : CommandModule
 
     public override void Execute(string taskParameters)
     {
-        client.SendMessage("You can type the \"--help\" command at any time to view these commands.");
-        client.SendMessage("\nAvailable Commands: ");
-        Client concreteClient = (Client)client;
+        outputSender.SendMessage("You can type the \"--help\" command at any time to view these commands.");
+        outputSender.SendMessage("\nAvailable Commands: ");
+        Client concreteClient = (Client)outputSender;
         foreach (ICommandModule module in concreteClient.Modules)
         {
-            client.SendMessage($"- {module.CommandParameters.CommandName} ({module.CommandParameters.CommandNameAbbreviation})");
-            client.SendMessage($"     - Description: {module.CommandParameters.CommandDescription}");
-            client.SendMessage($"     - Parameters: {module.CommandParameters.CommandParameters}");
+            outputSender.SendMessage($"- {module.CommandParameters.CommandName} ({module.CommandParameters.CommandNameAbbreviation})");
+            outputSender.SendMessage($"     - Description: {module.CommandParameters.CommandDescription}");
+            outputSender.SendMessage($"     - Parameters: {module.CommandParameters.CommandParameters}");
         }
     }
 }

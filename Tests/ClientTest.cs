@@ -1,16 +1,53 @@
 using ConsoleClient;
+using ConsoleClient.Core;
 using ConsoleClient.Modules;
+using ConsoleClient.Modules.DataContainers;
 
 namespace Tests;
 
 public class ClientTest
 {
+    public sealed class MockModule1 : CommandModule
+    {
+        public MockModule1(ICommandLineOutputSender outputSender) : base(outputSender)
+        {
+            commandParameters = new CommandModuleParameters
+                    (
+                        CommandName: "notsospecial",
+                        CommandNameAbbreviation: "nss",
+                        CommandDescription: "It doesn't do much.",
+                        CommandParameters: "None. "
+                    );
+        }
+
+        public override void Execute(string taskParameters)
+        {
+            outputSender.SendMessage($"Executing the not so special task of: {GetType().Name}");
+        }
+    }
+
+    public sealed class MockModule2 : CommandModule
+    {
+        public MockModule2(ICommandLineOutputSender outputSender) : base(outputSender)
+        {
+            commandParameters = new CommandModuleParameters
+                    (
+                        CommandName: "sospecial",
+                        CommandNameAbbreviation: "ss",
+                        CommandDescription: "It does something special.",
+                        CommandParameters: "None. "
+                    );
+        }
+
+        public override void Execute(string taskParameters)
+        {
+            outputSender.SendMessage($"Executing the special task of: {GetType().Name}");
+        }
+    }
+
     private readonly Client client;
 
-    public ClientTest()
-    {
-        client = new Client();
-    }
+    public ClientTest() => client = new Client();
 
     [Fact]
     public void ListenForInput_MessageSends()
@@ -53,7 +90,7 @@ public class ClientTest
     public void ListenForInput_HasModuleAdded()
     {
         client.TerminateCoreServices();
-        CommandHelp module = new(client);
+        MockModule1 module = new(client);
         client.AddModule(module);
         Assert.Contains(module, client.Modules);
     }
@@ -62,26 +99,41 @@ public class ClientTest
     public void ListenForInput_HasModulesAdded()
     {
         client.TerminateCoreServices();
-        CommandHelp helpModule = new(client);
-        SortNamesFromFile nameSortModule = new(client);
+        MockModule1 helpModule = new(client);
+        MockModule2 nameSortModule = new(client);
         client.AddModules(helpModule, nameSortModule);
         Assert.Contains(helpModule, client.Modules);
         Assert.Contains(expected: nameSortModule, client.Modules);
     }
 
     [Fact]
-    public void ListenForInput_RunsModule()
+    public void ListenForInput_RunsModuleWithCommandFullName()
     {
-        string userInput = "--h";
-        string expectedOutput =
-        "You can type the \"--help\" command at any time to view these commands."
-        + "\nAvailable Commands: "
-        + "\n- --help (--h)"
-        + "\n     - Description: Shows a list of all available commands with their descriptions and usage examples."
-        + "\n     - Parameters: None."
-        + "\nUsage Example: --help\n";
+        string userInput = "notsospecial";
+        string expectedOutput = "Executing the not so special task of: MockModule1";
+        MockModule1 module = new(client);
+        client.AddModule(module);
+        Assert.Contains(module, client.Modules);
+        client.OnModuleRan += () =>
+        {
+            client.TerminateCoreServices();
+            StringWriter output = new();
+            Console.SetOut(output);
+            bool isSame = expectedOutput.Contains(output.ToString());
+            Assert.True(isSame);
+        };
+        client.InitializeCoreServices();
+        StringReader input = new(userInput);
+        Console.SetIn(input);
+        client.ListenForInput();
+    }
 
-        CommandHelp module = new(client);
+    [Fact]
+    public void ListenForInput_RunsModuleWithCommandNameAbbreviated()
+    {
+        string userInput = "ss";
+        string expectedOutput = "Executing the special task of: MockModule2";
+        MockModule2 module = new(client);
         client.AddModule(module);
         Assert.Contains(module, client.Modules);
         client.OnModuleRan += () =>

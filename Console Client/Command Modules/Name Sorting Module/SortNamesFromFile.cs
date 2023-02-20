@@ -1,4 +1,5 @@
 using System.Text;
+using ConsoleClient.Core;
 using ConsoleClient.Helpers;
 using ConsoleClient.Modules.DataContainers;
 
@@ -11,7 +12,7 @@ public sealed class SortNamesFromFile : CommandModule
     private readonly ITextFileWriter fileWriter;
     private readonly INamesSorter namesSorter;
 
-    public SortNamesFromFile(IClient client) : base(client)
+    public SortNamesFromFile(ICommandLineOutputSender outputSender) : base(outputSender)
     {
         commandParameters = new CommandModuleParameters
         (
@@ -26,38 +27,38 @@ public sealed class SortNamesFromFile : CommandModule
         fileWriter = new TextFileWriter();
         //here we don't parse in the entire client class,
         //we only inject the outputsender interface from the client
-        namesSorter = new NamesSorter(client);
+        namesSorter = new NamesSorter(outputSender);
     }
 
     public override void Execute(string taskParameters)
     {
         string path = ProjectDirectoryHelper.GetLocalPathTo(taskParameters);
         string namesFromFile = fileReader.ReadFromFile(path);
-        if(namesFromFile == string.Empty)
+        if (namesFromFile == string.Empty)
         {
-            client.SendErrorMessage(this, $"\"{path}\" is not a valid path.");
+            outputSender.SendErrorMessage(this, $"\"{path}\" is not a valid path or the file is empty.");
             return;
         }
         string[] namesToSort = namesFromFile.Split(Environment.NewLine);
         string[]? sortedNames = namesSorter.SortAlphabetically(namesToSort);
         if (sortedNames == null)
         {
-            client.SendErrorMessage(this, "The source of names provided is null.");
+            outputSender.SendErrorMessage(this, "The source of names provided is null.");
             return;
         }
         StringBuilder fullNamesList = new();
         foreach (string fullName in sortedNames)
         {
             fullNamesList.AppendLine(fullName);
-            client.SendMessage(fullName);
+            outputSender.SendMessage(fullName);
         }
         int indexFromLastTrailingSlash = path.LastIndexOf('/') + 1;
         string trimmedPath = path.Substring(0, indexFromLastTrailingSlash);
         string finalPath = $"{trimmedPath}{sortedFileName}";
-        client.SendMessage($"\nSorting Completed");
+        outputSender.SendMessage($"\nSorting Completed");
         fileWriter.WriteToFile(finalPath, fullNamesList.ToString().TrimEnd(), FileMode.Create);
-        client.SendMessage($"\nSave Completed");
-        client.SendMessage($"\nThe File Was Saved To:");
-        client.SendMessage($"--> {finalPath}\n");
+        outputSender.SendMessage($"\nSave Completed");
+        outputSender.SendMessage($"\nThe File Was Saved To:");
+        outputSender.SendMessage($"--> {finalPath}\n");
     }
 }
