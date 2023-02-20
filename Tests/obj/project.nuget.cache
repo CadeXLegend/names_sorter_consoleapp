@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ztQxEA5yoMXDsBhUJZD59vw8ydqxTjqb3+PFLReB2eeAnJCkXrx/iygxqIt9S0EHBlVBCqdcdsYK1z52CpiswA==",
+  "dgSpecHash": "6aKvstxbdEwpUFz2mUG+1G+s9XW6xqvzMY1QSdVCabygg5W5FLXeV9qkZKQ8nHk1+2kqEn/mIk0knQxDxxZzgQ==",
   "success": true,
   "projectFilePath": "/home/cade/Names_Sorter_ConsoleApp/Tests/Tests.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "/home/cade/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/home/cade/.nuget/packages/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg.sha512",
     "/home/cade/.nuget/packages/nuget.frameworks/5.11.0/nuget.frameworks.5.11.0.nupkg.sha512",
+    "/home/cade/.nuget/packages/reportgenerator/5.1.17/reportgenerator.5.1.17.nupkg.sha512",
     "/home/cade/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/home/cade/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/home/cade/.nuget/packages/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

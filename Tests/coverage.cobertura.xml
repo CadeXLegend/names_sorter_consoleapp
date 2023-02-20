@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.8682" branch-rate="0.826" version="1.9" timestamp="1676902420" lines-covered="178" lines-valid="205" branches-covered="38" branches-valid="46">
+<coverage line-rate="0.917" branch-rate="0.8695" version="1.9" timestamp="1676904010" lines-covered="188" lines-valid="205" branches-covered="40" branches-valid="46">
   <sources>
     <source>/home/cade/Names_Sorter_ConsoleApp/Console Client/</source>
   </sources>
   <packages>
-    <package name="Names_Sorter_ConsoleApp" line-rate="0.8682" branch-rate="0.826" complexity="69">
+    <package name="Names_Sorter_ConsoleApp" line-rate="0.917" branch-rate="0.8695" complexity="69">
       <classes>
         <class name="Program" filename="Program.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -40,11 +40,11 @@
             <line number="21" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="ConsoleClient.Client" filename="Client.cs" line-rate="0.9823999999999999" branch-rate="0.8181" complexity="29">
+        <class name="ConsoleClient.Client" filename="Client.cs" line-rate="0.9649" branch-rate="0.8181" complexity="29">
           <methods>
             <method name="get_Modules" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="16" hits="6" branch="False" />
+                <line number="16" hits="7" branch="False" />
               </lines>
             </method>
             <method name="get_ConsoleInput" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -83,15 +83,15 @@
             </method>
             <method name="SendMessage" signature="(System.String,System.Boolean)" line-rate="0.8" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="43" hits="6" branch="False" />
-                <line number="44" hits="6" branch="True" condition-coverage="50% (1/2)">
+                <line number="43" hits="10" branch="False" />
+                <line number="44" hits="10" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="4" type="jump" coverage="50%" />
                   </conditions>
                 </line>
                 <line number="45" hits="0" branch="False" />
-                <line number="47" hits="6" branch="False" />
-                <line number="48" hits="6" branch="False" />
+                <line number="47" hits="10" branch="False" />
+                <line number="48" hits="10" branch="False" />
               </lines>
             </method>
             <method name="SendErrorMessage" signature="(System.Object,System.String)" line-rate="1" branch-rate="1" complexity="1">
@@ -120,7 +120,7 @@
                 <line number="64" hits="1" branch="False" />
               </lines>
             </method>
-            <method name="RunModule" signature="()" line-rate="1" branch-rate="0.8125" complexity="16">
+            <method name="RunModule" signature="()" line-rate="0.96" branch-rate="0.8125" complexity="16">
               <lines>
                 <line number="72" hits="5" branch="False" />
                 <line number="73" hits="5" branch="True" condition-coverage="100% (2/2)">
@@ -139,7 +139,7 @@
                 <line number="80" hits="4" branch="False" />
                 <line number="81" hits="4" branch="False" />
                 <line number="82" hits="4" branch="False" />
-                <line number="83" hits="15" branch="True" condition-coverage="100% (2/2)">
+                <line number="83" hits="14" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
                     <condition number="186" type="jump" coverage="100%" />
                   </conditions>
@@ -152,25 +152,25 @@
                   </conditions>
                 </line>
                 <line number="86" hits="2" branch="False" />
-                <line number="87" hits="1" branch="False" />
-                <line number="88" hits="1" branch="False" />
-                <line number="89" hits="1" branch="False" />
-                <line number="91" hits="1" branch="False" />
+                <line number="87" hits="2" branch="False" />
+                <line number="88" hits="2" branch="False" />
+                <line number="89" hits="2" branch="False" />
+                <line number="91" hits="0" branch="False" />
                 <line number="94" hits="4" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
                     <condition number="213" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="95" hits="3" branch="False" />
-                <line number="96" hits="3" branch="False" />
-                <line number="97" hits="3" branch="True" condition-coverage="50% (1/2)">
+                <line number="95" hits="2" branch="False" />
+                <line number="96" hits="2" branch="False" />
+                <line number="97" hits="2" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="247" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="98" hits="3" branch="False" />
-                <line number="101" hits="1" branch="False" />
-                <line number="102" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="98" hits="2" branch="False" />
+                <line number="101" hits="2" branch="False" />
+                <line number="102" hits="2" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="275" type="jump" coverage="50%" />
                   </conditions>
@@ -186,7 +186,7 @@
             </method>
           </methods>
           <lines>
-            <line number="16" hits="6" branch="False" />
+            <line number="16" hits="7" branch="False" />
             <line number="18" hits="1" branch="False" />
             <line number="22" hits="5" branch="False" />
             <line number="23" hits="5" branch="False" />
@@ -205,15 +205,15 @@
               </conditions>
             </line>
             <line number="40" hits="11" branch="False" />
-            <line number="43" hits="6" branch="False" />
-            <line number="44" hits="6" branch="True" condition-coverage="50% (1/2)">
+            <line number="43" hits="10" branch="False" />
+            <line number="44" hits="10" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="4" type="jump" coverage="50%" />
               </conditions>
             </line>
             <line number="45" hits="0" branch="False" />
-            <line number="47" hits="6" branch="False" />
-            <line number="48" hits="6" branch="False" />
+            <line number="47" hits="10" branch="False" />
+            <line number="48" hits="10" branch="False" />
             <line number="51" hits="1" branch="False" />
             <line number="52" hits="1" branch="False" />
             <line number="53" hits="1" branch="False" />
@@ -245,7 +245,7 @@
             <line number="80" hits="4" branch="False" />
             <line number="81" hits="4" branch="False" />
             <line number="82" hits="4" branch="False" />
-            <line number="83" hits="15" branch="True" condition-coverage="100% (2/2)">
+            <line number="83" hits="14" branch="True" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="186" type="jump" coverage="100%" />
               </conditions>
@@ -258,25 +258,25 @@
               </conditions>
             </line>
             <line number="86" hits="2" branch="False" />
-            <line number="87" hits="1" branch="False" />
-            <line number="88" hits="1" branch="False" />
-            <line number="89" hits="1" branch="False" />
-            <line number="91" hits="1" branch="False" />
+            <line number="87" hits="2" branch="False" />
+            <line number="88" hits="2" branch="False" />
+            <line number="89" hits="2" branch="False" />
+            <line number="91" hits="0" branch="False" />
             <line number="94" hits="4" branch="True" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="213" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="95" hits="3" branch="False" />
-            <line number="96" hits="3" branch="False" />
-            <line number="97" hits="3" branch="True" condition-coverage="50% (1/2)">
+            <line number="95" hits="2" branch="False" />
+            <line number="96" hits="2" branch="False" />
+            <line number="97" hits="2" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="247" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="98" hits="3" branch="False" />
-            <line number="101" hits="1" branch="False" />
-            <line number="102" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="98" hits="2" branch="False" />
+            <line number="101" hits="2" branch="False" />
+            <line number="102" hits="2" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="275" type="jump" coverage="50%" />
               </conditions>
@@ -530,25 +530,25 @@
             <line number="22" hits="1015" branch="False" />
           </lines>
         </class>
-        <class name="ConsoleClient.Modules.CommandHelp" filename="Command Modules/Command Help Module/CommandHelp.cs" line-rate="0.47609999999999997" branch-rate="0" complexity="3">
+        <class name="ConsoleClient.Modules.CommandHelp" filename="Command Modules/Command Help Module/CommandHelp.cs" line-rate="1" branch-rate="1" complexity="3">
           <methods>
-            <method name="Execute" signature="(System.String)" line-rate="0" branch-rate="0" complexity="2">
+            <method name="Execute" signature="(System.String)" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="19" hits="0" branch="False" />
-                <line number="20" hits="0" branch="False" />
-                <line number="21" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="5" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="257" type="jump" coverage="0%" />
+                    <condition number="257" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
-                <line number="29" hits="0" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(ConsoleClient.IClient)" line-rate="1" branch-rate="1" complexity="1">
@@ -567,21 +567,21 @@
             </method>
           </methods>
           <lines>
-            <line number="19" hits="0" branch="False" />
-            <line number="20" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="5" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="257" type="jump" coverage="0%" />
+                <condition number="257" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="29" hits="0" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
             <line number="7" hits="1" branch="False" />
             <line number="8" hits="1" branch="False" />
             <line number="9" hits="1" branch="False" />
@@ -598,7 +598,7 @@
           <methods>
             <method name="get_CommandParameters" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="3" branch="False" />
+                <line number="12" hits="7" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(ConsoleClient.Core.ICommandLineOutputSender)" line-rate="1" branch-rate="1" complexity="1">
@@ -612,7 +612,7 @@
             </method>
           </methods>
           <lines>
-            <line number="12" hits="3" branch="False" />
+            <line number="12" hits="7" branch="False" />
             <line number="15" hits="9" branch="False" />
             <line number="16" hits="9" branch="False" />
             <line number="17" hits="9" branch="False" />
@@ -750,22 +750,22 @@
           <methods>
             <method name="get_CommandName" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="11" branch="False" />
+                <line number="5" hits="12" branch="False" />
               </lines>
             </method>
             <method name="get_CommandNameAbbreviation" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="7" hits="10" branch="False" />
+                <line number="7" hits="11" branch="False" />
               </lines>
             </method>
             <method name="get_CommandDescription" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="9" hits="9" branch="False" />
+                <line number="9" hits="10" branch="False" />
               </lines>
             </method>
             <method name="get_CommandParameters" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="9" branch="False" />
+                <line number="11" hits="10" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(System.String,System.String,System.String,System.String)" line-rate="1" branch-rate="1" complexity="1">
@@ -780,10 +780,10 @@
             </method>
           </methods>
           <lines>
-            <line number="5" hits="11" branch="False" />
-            <line number="7" hits="10" branch="False" />
-            <line number="9" hits="9" branch="False" />
-            <line number="11" hits="9" branch="False" />
+            <line number="5" hits="12" branch="False" />
+            <line number="7" hits="11" branch="False" />
+            <line number="9" hits="10" branch="False" />
+            <line number="11" hits="10" branch="False" />
             <line number="14" hits="9" branch="False" />
             <line number="15" hits="9" branch="False" />
             <line number="16" hits="9" branch="False" />

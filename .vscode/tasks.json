@@ -39,7 +39,7 @@
         },
         {
             "label": "test",
-            "command": "cd \"Tests\"; dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura",
+            "command": "cd \"Tests\"; dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura; reportgenerator -reports:coverage.cobertura.xml -targetdir:TestCoverageReport_HTML_withBadges -reporttypes:Html;Badges;",
             "type": "shell",
             "problemMatcher": "$msCompile",
             "detail": "performs the tests and collects test coverage which outputs to a cobertura report",
