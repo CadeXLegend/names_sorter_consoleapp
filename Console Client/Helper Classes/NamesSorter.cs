@@ -37,10 +37,10 @@ public class NamesSorter : INamesSorter
         }
 
         string[]? sortedNames = people.OrderBy(
-            person => person.lastName)
-            .ThenBy(person => person.firstName)
-            .ThenBy(person => person.middleName)
-            .Select(person => person.fullName).ToArray();
+            person => person.LastName)
+            .ThenBy(person => person.FirstName)
+            .ThenBy(person => person.MiddleName)
+            .Select(person => person.FullName).ToArray();
         return sortedNames;
     }
 }
