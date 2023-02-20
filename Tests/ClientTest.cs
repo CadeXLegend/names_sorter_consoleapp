@@ -59,6 +59,17 @@ public class ClientTest
     }
 
     [Fact]
+    public void ListenForInput_HasModulesAdded()
+    {
+        client.TerminateCoreServices();
+        CommandHelp helpModule = new(client);
+        SortNamesFromFile nameSortModule = new(client);
+        client.AddModules(helpModule, nameSortModule);
+        Assert.Contains(helpModule, client.Modules);
+        Assert.Contains(expected: nameSortModule, client.Modules);
+    }
+
+    [Fact]
     public void ListenForInput_RunsModule()
     {
         string userInput = "--h";
