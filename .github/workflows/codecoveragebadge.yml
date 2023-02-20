@@ -18,5 +18,4 @@ jobs:
           file-name: coverage.svg
           badge-branch: badges
           github-token: '${{ secrets.GITHUB_TOKEN }}'
-          working-directory: "./Tests"
-          coverage-file-name: coverage.cobertura.xml
+          coverage-file-name: ./coverage.cobertura.xml
