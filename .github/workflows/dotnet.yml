@@ -31,11 +31,4 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       working-directory: "./Console Client"
-      run: dotnet test --no-build --verbosity normal
-    - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2.4.1
-      if: always()
-      with:
-        files: |
-          TestResults/**/*.xml
-          TestResults/**/*.trx
+      run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
