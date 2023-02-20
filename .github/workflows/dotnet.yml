@@ -24,8 +24,8 @@ jobs:
       with:
         dotnet-version: 7.0.100
     - name: Restore dependencies
-      run: dotnet restore "/home/cade/Names_Sorter_ConsoleApp/Console ClientConsole/Names_Sorter_ConsoleApp.csproj"
+      run: dotnet restore
     - name: Build
-      run: dotnet build "/home/cade/Names_Sorter_ConsoleApp/Console Client" --no-restore
+      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test "/home/cade/Names_Sorter_ConsoleApp/Console Client" --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal
