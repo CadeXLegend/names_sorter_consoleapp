@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KAaJziG5U6zFgXuVuvmQtFXfpuCClAnAxzy2qosXzi2WK33joLMYzvkF7FXordlp5PzC0Nx/gzraKrdbw4cBtA==",
+  "dgSpecHash": "ztQxEA5yoMXDsBhUJZD59vw8ydqxTjqb3+PFLReB2eeAnJCkXrx/iygxqIt9S0EHBlVBCqdcdsYK1z52CpiswA==",
   "success": true,
   "projectFilePath": "/home/cade/Names_Sorter_ConsoleApp/Tests/Tests.csproj",
   "expectedPackageFiles": [
     "/home/cade/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
+    "/home/cade/.nuget/packages/coverlet.msbuild/3.2.0/coverlet.msbuild.3.2.0.nupkg.sha512",
     "/home/cade/.nuget/packages/microsoft.codecoverage/17.3.2/microsoft.codecoverage.17.3.2.nupkg.sha512",
     "/home/cade/.nuget/packages/microsoft.csharp/4.0.1/microsoft.csharp.4.0.1.nupkg.sha512",
     "/home/cade/.nuget/packages/microsoft.net.test.sdk/17.3.2/microsoft.net.test.sdk.17.3.2.nupkg.sha512",
